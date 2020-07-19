@@ -6,4 +6,4 @@ sass:
   style: compressed
 
 title: Disable Gatekeeper on macOS Catalina (10.15)
-description: Disable or restore macOS Gatekeeper by following the instructions on this website.
+description: Permanently disable or bypass Gatekeeper by following the instructions on this website.
