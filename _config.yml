@@ -1,4 +1,4 @@
-baseurl: /
+baseurl: ""
 exclude:
   - LICENSE.md
 permalink: pretty
