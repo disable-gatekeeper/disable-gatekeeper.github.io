@@ -3,7 +3,7 @@ permalink: index.html
 layout: default
 ---
 
-# Disable Gatekeeper on macOS Catalina (10.15)
+# Disable Gatekeeper on macOS Big Sur (11.x)
 
 ## Why?
 
@@ -16,13 +16,14 @@ applications or upload them to the Mac App Store. Due to this, many open source
 applications can't be run out of the box on macOS.
 
 Recent macOS versions have made it increasingly difficult to disable Gatekeeper.
-Thankfully, there are still several ways to disable or bypass it as of July 2020.
+Thankfully, there are still several ways to disable or bypass it as of March 2021.
 
 ## Usage
 
 ### Disabling Gatekeeper permanently
 
-1. Open a terminal by pressing <kbd>Cmd + Space</kbd>, enter "Terminal" and open the application.
+1. Open a terminal by pressing <kbd>Cmd + Space</kbd>, enter "Terminal" and open
+   the application.
 2. Run the following command: `sudo spctl --master-disable`.
    Enter your administrator password when requested.
 3. Gatekeeper is now disabled permanently.
@@ -31,20 +32,26 @@ Thankfully, there are still several ways to disable or bypass it as of July 2020
 
 #### Using Finder
 
-**Note:** This method may not work for applications. If the application still
-doesn't run after following the steps below, try following the steps described
-in **Using Terminal** instead.
+**Note:** This method may not work for all applications. If the application
+still doesn't run after following the steps below, try following the steps
+described in **Using Terminal** instead.
 
 1. Open Finder and navigate to the application you just downloaded.
 2. Right-click the application and choose **Open**.
-3. Click **Open** in the confirmation dialog that appears.
+3. Click **Cancel** in the confirmation dialog that appears. This is required
+   since macOS Big Sur, as the dialog must now be opened twice for the **Open**
+   button to appear. On macOS Catalina and older, you only have to open this
+   dialog once.
+4. Right-click the application *a second time* and choose **Open** again.
+5. Click **Open** in the confirmation dialog that appears.
 
 You only have to do this for the first application start.
 You can start the application as usual afterwards.
 
 #### Using Terminal
 
-1. Open a terminal by pressing <kbd>Cmd + Space</kbd>, enter "Terminal" and open the application.
+1. Open a terminal by pressing <kbd>Cmd + Space</kbd>, enter "Terminal" and open
+   the application.
 2. Run the following command: `xattr -dr com.apple.quarantine /path/to/Application.app`.
    The path is case-sensitive and must point to the application bundle.
    (You can use <kbd>Tab</kbd> to complete file paths.)
@@ -95,7 +102,8 @@ If the application was packaged in a ZIP archive, this could be due to the
 executable (`+x`) attribute being missing on the binary contained in the .app
 bundle. To solve this:
 
-1. Open a terminal by pressing <kbd>Cmd + Space</kbd>, enter "Terminal" and open the application.
+1. Open a terminal by pressing <kbd>Cmd + Space</kbd>, enter "Terminal" and open
+   the application.
 2. Run the following command: `chmod +x /path/to/Application.app/Contents/MacOS/*`.
    The path is case-sensitive and must point to the application bundle.
    (You can use <kbd>Tab</kbd> to complete file paths.)
@@ -105,7 +113,7 @@ You can start the application as usual afterwards.
 
 ## License
 
-Copyright © 2017-2020 Hugo Locurcio and contributors
+Copyright © 2017-2021 Hugo Locurcio and contributors
 
 Files in this repository are licensed under CC0 1.0 Universal. See
 [LICENSE.md](https://github.com/disable-gatekeeper/disable-gatekeeper.github.io/blob/master/LICENSE.md)
