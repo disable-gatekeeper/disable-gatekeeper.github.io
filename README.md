@@ -3,7 +3,7 @@ permalink: index.html
 layout: default
 ---
 
-# Disable Gatekeeper on macOS Big Sur (11.x)
+# Disable Gatekeeper on macOS Big Sur (11.x) or later
 
 ## Why?
 
@@ -26,7 +26,13 @@ Thankfully, there are still several ways to disable or bypass it as of March 202
    the application.
 2. Run the following command: `sudo spctl --master-disable`.
    Enter your administrator password when requested.
-3. Gatekeeper is now disabled permanently.
+3. In newer macOS versions, it will display error message saying "Globally disabling the assessment system needs to be confirmed in System Settings."
+   If you got this message, go to step 4, otherwise jump to the step 7.
+4. Open System Settings, and then go to Privacy & Security.
+5. Scroll down until you see "Allow applications from" dropdown box. Choose "Anywhere" on that dropdown box.
+6. When macOS shows you warning that it will make your system less secure, just click "Allow From Anywhere."
+   Enter your administrator password or use Touch ID when requested.
+7. Gatekeeper is now disabled permanently.
 
 ### Disabling Gatekeeper for one application only
 
