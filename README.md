@@ -30,7 +30,7 @@ Thankfully, there are still several ways to disable or bypass it as of March 202
    If you got this message, go to step 4, otherwise jump to the step 7.
 4. Open System Settings, and then go to Privacy & Security.
 5. Scroll down until you see "Allow applications from" dropdown box. Choose "Anywhere" on that dropdown box.
-6. When macOS shows you warning that it will make your system less secure, just click "Allow From Anywhere."
+6. When macOS shows you a warning that it will make your system less secure, just click "Allow From Anywhere."
    Enter your administrator password or use Touch ID when requested.
 7. Gatekeeper is now disabled permanently.
 
